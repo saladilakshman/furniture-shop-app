@@ -30,11 +30,11 @@ const Filtersection = () => {
         (q) => q.shipping === true
       );
       dispatch({
-        type: "products-filteration",
+        type: "product-shipping",
         payload: freeshippingproducts,
       });
     } else {
-      dispatch({ type: "products-filteration", payload: state?.productslist });
+      dispatch({ type: "product-shipping", payload: state?.productslist });
     }
   };
 
@@ -132,6 +132,7 @@ const Filtersection = () => {
           <p>Free shipping</p>
           <input
             type="checkbox"
+            checked={state?.filters?.freeship}
             className="accent-orange-700"
             id="shipping-checkbox"
             onChange={(e) => getProductswithfreeshipping(e)}

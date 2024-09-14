@@ -23,6 +23,7 @@ function App() {
       buttonindex: 0,
       companyname: "",
       pricerange: Math.max(...range),
+      freeship: false,
     },
   };
   const shopreducer = (state, action) => {
@@ -174,6 +175,13 @@ function App() {
           filteredProducts: getItemsbypricerange,
         };
       }
+      case "product-shipping": {
+        return {
+          ...state,
+          filters: { ...state.filters, freeship: !state.filters.freeship },
+          filteredProducts: action.payload,
+        };
+      }
       case "reset-filters": {
         return {
           ...state,
@@ -181,6 +189,7 @@ function App() {
             search: "",
             buttonindex: 0,
             companyname: "",
+            freeship: false,
             pricerange: Math.max(...range),
           },
           filteredProducts: productsList,
