@@ -17,7 +17,10 @@ const Search = () => {
               type="search"
               placeholder="Search the product"
               onChange={(e) => {
-                dispatch({ type: "mobile-search", payload: e.target.value });
+                dispatch({
+                  type: "mobile-search",
+                  payload: e.target.value.toLowerCase(),
+                });
               }}
               className="mobile-search-bar-input"
             />
