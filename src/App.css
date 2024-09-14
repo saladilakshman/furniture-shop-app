@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-poppins relative;
+}
+.services-text {
+  position: relative;
+  width: fit-content;
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.services-text::before {
+  content: "";
+  background-color: rgb(240, 198, 61);
+  width: 75%;
+  height: 2px;
+  position: absolute;
+  bottom: 0px;
+  right: 12%;
+}
+.mobile-sidebar {
+  transform: translateX(100%);
+  transition: transform 5s;
+}
+.home-page-container {
+  @apply container mx-auto lg:px-24 px-2  lg:flex-row flex justify-between items-center flex-col-reverse max-md:gap-8;
+}
+.home-page-alignment {
+  @apply flex flex-col justify-center items-baseline gap-4 lg:gap-8 max-md:pl-2;
+}
+.home-page-shop-button {
+  @apply lg:px-6 lg:py-2 px-4 py-1 rounded-md  ring-1 ring-zinc-600  text-zinc-900 max-md:mb-3 hover:bg-zinc-50/15 active:bg-zinc-50/30 transition-colors;
+}
+.home-page-carousel-backward-button {
+  @apply absolute left-0 top-[50%]  bg-neutral-200 rounded-full shadow-xl  disabled:opacity-0 p-1 transition-all;
+}
+.home-page-carousel-forward-button {
+  @apply absolute right-0 top-[50%]  bg-neutral-200 rounded-full shadow-xl p-1  disabled:opacity-0;
+}
+.home-page-items-layout {
+  @apply flex lg:flex-row flex-col justify-between items-center container mx-auto lg:px-24 px-2 gap-4 my-6;
+}
+.home-page-connection-section {
+  @apply flex flex-col lg:flex-row justify-between items-center my-8 container mx-auto lg:px-24 gap-8;
+}
+.section-container {
+  @apply container mx-auto lg:px-24 px-4;
+}
+.login-page-horizontal-alignment {
+  @apply flex flex-col justify-center items-center gap-5;
+}
+.login-page-text {
+  @apply lg:text-xl text-lg text-center capitalize;
+}
+.login-page-button {
+  @apply px-4 py-1 border border-zinc-700 text-zinc-800 rounded-md;
+}
+.mobile-search-bar-layout {
+  @apply px-1 py-1 z-10 fixed top-0 bottom-0 left-0 right-0 w-full h-full overflow-auto bg-white;
+}
+.mobile-search-bar-input {
+  @apply bg-white w-full ring-1 ring-gray-400 rounded-sm h-10 focus:outline-none pl-10 my-1;
+}
+.bottom-navbar {
+  @apply text-xs bg-amber-700 text-white text-center w-4 tabular-nums absolute -top-2 left-4  rounded-full ring-1 ring-white transition-opacity;
+}
